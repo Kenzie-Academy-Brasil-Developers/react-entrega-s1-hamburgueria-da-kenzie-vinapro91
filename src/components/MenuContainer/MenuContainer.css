@@ -1,0 +1,7 @@
+.MenuContainer ul {
+  display: flex;
+  justify-content: space-around;
+}
+.MenuContainer {
+  margin-top: 20px;
+}
