@@ -20,11 +20,12 @@ function App() {
   const [cartTotal, setCartTotal] = useState(0);
 
   const showProducts = (input) => {
-    const filterProduct = products.filter(
-      (el) => el.name.toLowerCase().indexOf(input.toLowerCase()) > -1
+    const filterProduct = products.filter((el) =>
+      el.name.toLowerCase().includes(input.toLowerCase())
     );
     const [arrProd] = filterProduct;
-    input !== "" && setProducts([...filteredProducts, arrProd]);
+    console.log(filterProduct);
+    input !== "" && setProducts([...filterProduct]);
   };
 
   const handleClick = (productId) => {
