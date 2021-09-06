@@ -14,16 +14,12 @@ function App() {
     { id: 7, name: "Fanta", category: "Bebidas", price: 4.99 },
   ]);
 
-  const [filteredProducts, setFilteredProducts] = useState([]);
-
   const [currentSale, setCurrentSale] = useState([]);
-  const [cartTotal, setCartTotal] = useState(0);
 
   const showProducts = (input) => {
     const filterProduct = products.filter((el) =>
       el.name.toLowerCase().includes(input.toLowerCase())
     );
-    const [arrProd] = filterProduct;
     console.log(filterProduct);
     input !== "" && setProducts([...filterProduct]);
   };
