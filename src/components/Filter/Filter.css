@@ -6,4 +6,8 @@
   justify-content: center;
   text-align: center;
   align-items: center;
+  color: #ffff;
+}
+.div-input input {
+  margin-left: 10px;
 }

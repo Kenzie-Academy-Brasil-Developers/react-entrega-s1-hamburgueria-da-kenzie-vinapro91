@@ -19,29 +19,35 @@ function App() {
   const [currentSale, setCurrentSale] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
 
-  const showProducts = () => {};
+  const showProducts = (input) => {
+    const filterProduct = products.filter(
+      (el) => el.name.toLowerCase().indexOf(input.toLowerCase()) > -1
+    );
+    const [arrProd] = filterProduct;
+    input !== "" && setProducts([...filteredProducts, arrProd]);
+  };
+
   const handleClick = (productId) => {
     const filterProduct = products.filter(
       (elemento) => elemento.id === productId
     );
     const [arrProd] = filterProduct;
-    setCurrentSale([...currentSale, arrProd]);
-    total();
-    console.log(currentSale);
-    console.log();
+
+    !currentSale.includes(arrProd) && setCurrentSale([...currentSale, arrProd]);
   };
-  const total = () => {
-    const valorTotal = currentSale.reduce((valorAnterior, valorAtual) => {
-      return valorAtual.price + valorAnterior;
-    }, 0);
-    console.log(valorTotal);
-    setCartTotal(valorTotal);
-  };
+
+  const valorTotal = currentSale.reduce((valorAnterior, valorAtual) => {
+    return valorAtual.price + valorAnterior;
+  }, 0);
   return (
     <div className="App">
-      <Filter />
+      <Filter
+        products={products}
+        showProducts={showProducts}
+        setProducts={setProducts}
+      />
       <MenuContainer handleClick={handleClick} products={products} />
-      <div> Subtotal: {cartTotal}</div>
+      <div> Subtotal: {valorTotal.toFixed(2)}</div>
       <Cart currentSale={currentSale} setCurrentSale={setCurrentSale} />
     </div>
   );

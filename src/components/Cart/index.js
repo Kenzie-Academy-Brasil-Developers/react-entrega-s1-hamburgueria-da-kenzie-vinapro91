@@ -1,4 +1,5 @@
 import Product from "../Product";
+import "./Cart.css";
 const Cart = ({ currentSale, setCurrentSale }) => {
   return (
     <ul>

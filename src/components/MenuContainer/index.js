@@ -10,6 +10,7 @@ const MenuContainer = ({ products, handleClick }) => {
             item={elemento}
             id={elemento.id}
             handleClick={() => handleClick(elemento.id)}
+            btnOn={true}
           ></Product>
         ))}
       </ul>

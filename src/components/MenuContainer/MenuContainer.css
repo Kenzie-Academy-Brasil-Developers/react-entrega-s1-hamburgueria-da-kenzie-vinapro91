@@ -1,7 +1,24 @@
 .MenuContainer ul {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap-reverse;
+  background: linear-gradient(
+    90deg,
+    rgba(112, 5, 13, 1) 0%,
+    rgba(190, 81, 89, 1) 53%,
+    rgba(112, 5, 13, 1) 100%
+  );
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+.MenuContainer ul li {
 }
 .MenuContainer {
-  margin-top: 20px;
+  margin: 20px auto;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+}
+.MenuContainer button {
 }
