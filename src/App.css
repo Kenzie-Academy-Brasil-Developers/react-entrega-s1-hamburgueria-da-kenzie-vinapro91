@@ -38,7 +38,15 @@ section {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.subtotal {
+  display: flex;
+  background-color: #e31300;
+  color: #4ce69f;
+  font-weight: bold;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

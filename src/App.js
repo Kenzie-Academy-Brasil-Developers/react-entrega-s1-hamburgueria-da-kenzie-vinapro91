@@ -20,7 +20,6 @@ function App() {
     const filterProduct = products.filter((el) =>
       el.name.toLowerCase().includes(input.toLowerCase())
     );
-    console.log(filterProduct);
     input !== "" && setProducts([...filterProduct]);
   };
 
@@ -44,7 +43,7 @@ function App() {
         setProducts={setProducts}
       />
       <MenuContainer handleClick={handleClick} products={products} />
-      <div> Subtotal: {valorTotal.toFixed(2)}</div>
+      <div className="subtotal"> Subtotal: R$: {valorTotal.toFixed(2)}</div>
       <Cart currentSale={currentSale} setCurrentSale={setCurrentSale} />
     </div>
   );
